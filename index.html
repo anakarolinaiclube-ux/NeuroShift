@@ -355,7 +355,22 @@ footer a{color:var(--muted);text-decoration:underline}
   .hero h1{font-size:1.75rem}
   .anchor-card{padding:1.25rem}
 }
+
+/* Cards progressivos Einstein */
+.story-step{display:none;margin-top:1rem}
+.story-step.active{display:block;animation:fup .4s ease forwards}
+.hook-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--orange);display:block;margin-bottom:.85rem}
+.btn-continue-reading{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:1.25rem;background:transparent;
+  border:1px solid var(--orange-border);
+  color:var(--orange);font-size:.88rem;font-weight:600;
+  padding:.6rem 1.1rem;border-radius:8px;cursor:pointer;
+  font-family:'Open Sans',sans-serif;transition:all .18s;
+}
+.btn-continue-reading:hover{background:var(--orange-dim);border-color:var(--orange)}
 </style>
+
 </head>
 <body>
 
@@ -427,23 +442,63 @@ footer a{color:var(--muted);text-decoration:underline}
 <section class="story-sec">
   <div class="sec-inner">
     <span class="sec-label">A descoberta</span>
-    <h2 class="reveal">Por que algumas pessoas têm memória e foco <em>excepcionais</em> — e o que elas fazem diferente</h2>
+    <h2 class="reveal">Por que algumas pessoas têm memória e foco <span>excepcionais</span> — e o que elas fazem diferente</h2>
+
     <div class="story-body reveal">
-      <p>Você já percebeu que certas pessoas parecem ter um superpoder? Elas resolvem problemas com facilidade, lembram de tudo, mantêm o foco por horas e ainda chegam em casa com energia.</p>
-      <p>Enquanto isso, a maioria de nós trabalha cada vez mais e rende cada vez menos.</p>
-      <p><strong>A resposta está em um dos casos mais bizarros da história da ciência: o roubo do cérebro de Albert Einstein.</strong></p>
-      <div class="highlight-box">
-        18 de abril de 1955: Einstein morre. Durante a autópsia, um médico rouba o cérebro e desaparece. Por 40 anos, fatias do cérebro de Einstein ficaram escondidas em porões, malas de carro e laboratórios improvisados — enquanto o mundo procurava pistas do gênio.
+      <p style="margin-bottom:1.5rem">Você já percebeu que certas pessoas parecem ter um superpoder? Elas resolvem problemas com facilidade, lembram de tudo, mantêm o foco por horas e ainda chegam em casa com energia.</p>
+      <p style="margin-bottom:1.5rem">Enquanto isso, a maioria de nós trabalha cada vez mais e rende cada vez menos.</p>
+      <p style="font-weight:700;color:var(--orange);margin-bottom:1.5rem">A resposta está em um dos casos mais bizarros da história da ciência: o roubo do cérebro de Albert Einstein.</p>
+
+      <div class="story-step active" id="step-1">
+        <div class="highlight-box">
+          <span class="hook-label">● Arquivo Histórico</span>
+          <p style="font-size:1.15rem;line-height:1.4;color:#fff;margin-bottom:1.2rem;font-family:'Merriweather',serif;font-weight:700;font-style:italic;">
+            "Existem segredos que a ciência tentou esconder por 40 anos... e o que aconteceu naquele porão é a chave para destravar sua mente hoje."
+          </p>
+          <p style="margin-bottom:1rem"><strong>18 de abril de 1955.</strong> O mundo lamentava a morte de Albert Einstein. Mas, enquanto os jornais imprimiam as manchetes, algo bizarro acontecia nos bastidores do Hospital de Princeton.</p>
+          <p style="margin-bottom:1rem">O Dr. Thomas Harvey, responsável pela autópsia, tomou uma decisão perturbadora: <strong>ele roubou o cérebro de Einstein.</strong></p>
+          <p style="font-size:.95rem;color:var(--muted)">Sem autorização da família. Sem permissão legal. Ele colocou o órgão em potes de vidro, escondeu em caixas e <strong>desapareceu.</strong> Por décadas, o paradeiro do cérebro mais brilhante do século foi um mistério absoluto.</p>
+          <button class="btn-continue-reading" onclick="revealStep(2, this)">→ Descobrir o que ele encontrou</button>
+        </div>
       </div>
-      <p>Quando neurocientistas finalmente estudaram essas fatias com tecnologia moderna, descobriram algo que mudou tudo: <em>o cérebro de Einstein era 15% menor que o de um adulto médio.</em></p>
-      <p>Então como ele se tornou o maior gênio da história moderna?</p>
-      <p>A resposta estava numa estrutura chamada <strong>corpus callosum</strong> — a "ponte" que conecta o hemisfério lógico com o criativo. No cérebro de Einstein, essa ponte era excepcionalmente espessa e desenvolvida.</p>
-      <p>Mas aqui está o que a maioria das pessoas não sabe: <em>Einstein não nasceu assim.</em></p>
-      <p>Aos seis anos, ele começou a tocar violino. Tocava horas todos os dias. Sempre que travava num problema difícil, pegava o violino — e a solução vinha. O que parecia coincidência era, na verdade, ciência: <strong>a prática do violino fortalecia exatamente essa ponte neural entre lógica e criatividade.</strong></p>
-      <div class="highlight-box">
-        A pergunta que obsedou pesquisadores foi: <em>é possível replicar esse efeito sem décadas de violino?</em> A resposta é sim. Com frequências theta certas, qualquer pessoa pode ativar esse estado — em alguns minutos por dia.
+
+      <div class="story-step" id="step-2">
+        <div class="highlight-box">
+          Quando neurocientistas finalmente estudaram essas partes com tecnologia moderna, descobriram algo que mudou tudo: <em>o cérebro de Einstein era 15% menor que o de um adulto médio.</em> Então como ele se tornou o maior gênio da história moderna?
+        </div>
+        <button class="btn-continue-reading" onclick="revealStep(3, this)">→ Continuar lendo</button>
       </div>
-      <p>O NeuroShift usa frequências de áudio desenvolvidas para levar seu cérebro a esse estado todos os dias — sem anos de violino, sem meditação complicada, sem equipamentos caros.</p>
+
+      <div class="story-step" id="step-3">
+        <div class="highlight-box">
+          A resposta estava numa estrutura chamada <strong>corpus callosum</strong>: a "ponte" que conecta o hemisfério lógico com o criativo. No cérebro de Einstein, essa ponte era excepcionalmente espessa e desenvolvida. Mas aqui está o que a maioria das pessoas não sabe: <em>Einstein não nasceu assim.</em>
+        </div>
+        <button class="btn-continue-reading" onclick="revealStep(4, this)">→ Continuar lendo</button>
+      </div>
+
+      <div class="story-step" id="step-4">
+        <div class="highlight-box">
+          Aos seis anos, ele começou a tocar violino. Tocava horas todos os dias. Sempre que travava num problema difícil, pegava o violino e a solução vinha. O que parecia coincidência era, na verdade, ciência: <strong>a prática do violino fortalecia exatamente essa ponte neural entre lógica e criatividade.</strong>
+        </div>
+        <button class="btn-continue-reading" onclick="revealStep(5, this)">→ Continuar lendo</button>
+      </div>
+
+      <div class="story-step" id="step-5">
+        <div class="highlight-box">
+          A pergunta que obsedou pesquisadores foi: <em>é possível replicar o efeito de Einstein sem décadas de violino?</em> Depois de anos pesquisando neuroplasticidade e frequências sonoras, a resposta é sim. E é muito mais simples do que parece.
+        </div>
+        <button class="btn-continue-reading" onclick="revealStep(6, this)">→ Continuar lendo</button>
+      </div>
+
+      <div class="story-step" id="step-6">
+        <div class="highlight-box">
+          Neurocientistas identificaram que o estado mental de alta performance (chamado de <strong>onda theta 4–8 Hz</strong>) é o mesmo que Einstein acessava enquanto tocava. O NeuroShift usa frequências de áudio desenvolvidas para levar seu cérebro a esse estado todos os dias, sem anos de violino e sem meditação complicada.
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:3rem">
+      <a href="#oferta" class="btn-cta">Garantir meu Acesso →</a>
     </div>
   </div>
 </section>
@@ -568,6 +623,12 @@ footer a{color:var(--muted);text-decoration:underline}
 
 <script>
 function toggleFaq(btn){btn.parentElement.classList.toggle('open')}
+
+function revealStep(n, btn) {
+  btn.style.display = 'none';
+  const next = document.getElementById('step-' + n);
+  if (next) { next.style.display = 'block'; next.style.animation = 'fup .4s ease forwards'; }
+}
 
 const observer=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active')})
