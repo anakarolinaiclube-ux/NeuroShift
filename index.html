@@ -78,7 +78,7 @@ body{
   max-width:600px;margin:0 auto 2.5rem;
 }
 
-/* CARROSSEL BENEFÍCIOS (DINÂMICO) */
+/* CARROSSEL BENEFÍCIOS */
 .hero-benefits-label {
     font-size: .65rem;
     font-weight: 800;
@@ -98,7 +98,8 @@ body{
 }
 
 @keyframes scrollInfinite{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.benefits-carousel{display:flex;width:max-content;animation:scrollInfinite 25s linear infinite;gap:16px}
+/* VELOCIDADE AJUSTADA PARA 32s (MAIS DEVAGAR QUE 25s) */
+.benefits-carousel{display:flex;width:max-content;animation:scrollInfinite 32s linear infinite;gap:16px}
 .benefits-card{
     width:260px;
     background:var(--bg2);
@@ -162,7 +163,10 @@ section{padding:5rem 1.25rem}
 .sec-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);display:block;margin-bottom:1rem}
 h2{font-family:'Merriweather',serif;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;line-height:1.2;color:#fff;margin-bottom:1.5rem}
 
-/* ── DEPOIMENTOS ── */
+/* ── DEPOIMENTOS (ESPAÇAMENTO REDUZIDO) ── */
+.test-sec {
+    padding-top: 1rem; /* Reduzido drasticamente para aproximar da seção anterior */
+}
 .test-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -254,6 +258,7 @@ footer{padding:3rem 1.25rem;text-align:center;font-size:.8rem;color:var(--muted)
 
 @media(max-width:600px){
     .how-step{flex-direction:column;gap:1rem}
+    .test-sec { padding-top: 0.5rem; }
 }
 </style>
 </head>
@@ -348,7 +353,7 @@ footer{padding:3rem 1.25rem;text-align:center;font-size:.8rem;color:var(--muted)
   </div>
 </section>
 
-<!-- DEPOIMENTOS (REPOSICIONADO AQUI) -->
+<!-- DEPOIMENTOS (REPOSICIONADO E COM MARGEM REDUZIDA) -->
 <section class="test-sec">
     <div class="sec-inner-wide">
         <span class="sec-label" style="text-align:center">Resultados Reais</span>
