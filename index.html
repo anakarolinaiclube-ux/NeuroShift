@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NeuroShift — O que ela ouviu</title>
+<title>NeuroShift — Ative Sua Mente</title>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -34,7 +34,7 @@ body{
 }
 
 @keyframes fup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes pulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.15)}}
+@keyframes pulse-gold {0% {box-shadow: 0 0 0 0 rgba(230, 168, 23, 0.4);} 70% {box-shadow: 0 0 0 15px rgba(230, 168, 23, 0);} 100% {box-shadow: 0 0 0 0 rgba(230, 168, 23, 0);}}
 
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.active{opacity:1;transform:translateY(0)}
@@ -47,115 +47,115 @@ body{
   color:var(--gold);
   text-align:center;
   padding:1.5rem 1.25rem;
-  border-bottom:1px solid var(--border);
 }
 
-/* ── HERO ── */
+/* ── HERO INTEGRADA ── */
 .hero{
-  padding:4rem 1.25rem 3.5rem;
+  padding:2rem 1.25rem 4rem;
   text-align:center;
   position:relative;
-  overflow:hidden;
-}
-.hero::before{
-  content:'';
-  position:absolute;top:-40%;left:50%;
-  transform:translateX(-50%);
-  width:700px;height:700px;
-  background:radial-gradient(circle,rgba(230,168,23,0.06) 0%,transparent 65%);
-  pointer-events:none;
 }
 
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:8px;
-  font-size:.75rem;font-weight:700;
+  font-size:.7rem;font-weight:700;
   text-transform:uppercase;letter-spacing:.14em;
   color:var(--gold);
-  margin-bottom:2rem;
-  opacity:0;animation:fup .5s .1s ease forwards;
-}
-.hero-eyebrow::before,.hero-eyebrow::after{
-  content:'';height:1px;width:28px;
-  background:rgba(230,168,23,0.4);
+  margin-bottom:1.5rem;
 }
 
 .hero h1{
   font-family:'Merriweather',serif;
   font-size:clamp(1.75rem,5.5vw,2.8rem);
   font-weight:700;line-height:1.2;
-  color:#fff;max-width:780px;
+  color:#fff;max-width:850px;
   margin:0 auto 1.25rem;
-  opacity:0;animation:fup .6s .25s ease forwards;
 }
 .hero h1 em{font-style:italic;color:var(--gold)}
 
 .hero-sub{
   font-size:1.05rem;color:var(--muted);
-  max-width:540px;margin:0 auto 2.5rem;
-  line-height:1.8;
-  opacity:0;animation:fup .6s .4s ease forwards;
+  max-width:600px;margin:0 auto 2.5rem;
 }
 
-/* CAIXA DEPOIMENTO ÂNCORA */
-.anchor-card{
-  background:var(--bg3);
-  border:1px solid var(--gold-border);
-  border-radius:16px;
-  padding:1.5rem 1.75rem;
-  max-width:560px;margin:0 auto 2.5rem;
-  text-align:left;
-  position:relative;
-  opacity:0;animation:fup .6s .55s ease forwards;
-}
-.anchor-card::before{
-  content:'';position:absolute;
-  left:0;top:15%;height:70%;width:3px;
-  background:var(--gold);border-radius:0 3px 3px 0;
-}
-.anchor-quote{
-  font-size:1.05rem;color:var(--text);
-  line-height:1.7;font-style:italic;
-  margin-bottom:.75rem;
-}
-.anchor-quote em{color:var(--gold);font-style:normal;font-weight:600}
-.anchor-who{font-size:.82rem;color:var(--muted)}
-
-.btn-cta{
-  display:inline-block;
-  background:var(--gold);
-  color:#0a0a0f;font-weight:700;
-  font-size:1.05rem;
-  padding:1.05rem 2.5rem;
-  border-radius:10px;border:none;
-  cursor:pointer;text-decoration:none;
-  letter-spacing:.02em;transition:all .22s;
-  font-family:'Open Sans',sans-serif;
-  box-shadow:0 8px 30px rgba(230,168,23,0.3);
-  opacity:0;animation:fup .5s .7s ease forwards;
-}
-.btn-cta:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 12px 40px rgba(230,168,23,0.4)}
-
-.btn-cta-block{
-  display:block;width:100%;
-  background:var(--gold);
-  color:#0a0a0f;font-weight:700;
-  font-size:1.1rem;
-  padding:1.15rem 2rem;
-  border-radius:10px;border:none;
-  cursor:pointer;text-decoration:none;
-  text-align:center;
-  letter-spacing:.02em;transition:all .22s;
-  font-family:'Open Sans',sans-serif;
-  box-shadow:0 8px 30px rgba(230,168,23,0.25);
-}
-.btn-cta-block:hover{background:var(--gold-l);box-shadow:0 12px 40px rgba(230,168,23,0.4)}
-
-.hero-fine{
-  font-size:.8rem;color:var(--muted);margin-top:1rem;
-  opacity:0;animation:fup .4s .85s ease forwards;
+/* CARROSSEL BENEFÍCIOS (DENTRO DA HERO) */
+.hero-benefits-label {
+    font-size: .65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: block;
 }
 
-/* STRIP */
+.carousel-container {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+    position: relative;
+    padding: 1rem 0;
+}
+
+@keyframes scrollInfinite{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.benefits-carousel{display:flex;width:max-content;animation:scrollInfinite 40s linear infinite;gap:16px}
+.benefits-card{
+    width:260px;
+    background:var(--bg2);
+    border:1px solid var(--border);
+    padding:1.5rem;
+    border-radius:16px;
+    text-align:left;
+    flex-shrink:0;
+}
+.benefits-icon{font-size:1.5rem;margin-bottom:0.8rem;display:block}
+.benefits-card h3{font-size:0.95rem;margin-bottom:.4rem;color:#fff;font-weight:700}
+.benefits-card p{font-size:.8rem;color:var(--muted);line-height:1.5}
+
+/* ── STICKY CTA (GLASSMORPHISM) ── */
+.sticky-cta-container {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    z-index: 9999;
+    width: 90%;
+    max-width: 400px;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s;
+    opacity: 0;
+}
+
+.sticky-cta-container.visible {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.sticky-cta-container.hidden-offer {
+    transform: translateX(-50%) translateY(100px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.btn-sticky {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: rgba(230, 168, 23, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #0a0a0f;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.2);
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    animation: pulse-gold 2s infinite;
+}
+
+/* ── STRIP ── */
 .strip{
   background:var(--bg2);
   border-top:1px solid var(--border);
@@ -164,437 +164,196 @@ body{
   display:flex;align-items:center;
   justify-content:center;gap:2rem;flex-wrap:wrap;
 }
-.strip-item{font-size:.85rem;color:var(--muted)}
+.strip-item{font-size:.8rem;color:var(--muted)}
 .strip-item strong{color:var(--text)}
-.strip-dot{width:3px;height:3px;border-radius:50%;background:var(--border2)}
-@media(max-width:600px){
-  .strip{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;padding:1rem 1.25rem}
-  .strip-item{font-size:.8rem}
-  .strip-dot{display:none}
-}
 
-/* SECTIONS */
-section{padding:4.5rem 1.25rem}
+/* ── SECTIONS ── */
+section{padding:5rem 1.25rem}
 .sec-inner{max-width:760px;margin:0 auto}
-.sec-inner-wide{max-width:960px;margin:0 auto}
-.sec-label{
-  font-size:.72rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:.16em;
-  color:var(--gold);display:block;margin-bottom:.85rem;
-}
-h2{
-  font-family:'Merriweather',serif;
-  font-size:clamp(1.5rem,4vw,2rem);
-  font-weight:700;line-height:1.25;
-  color:#fff;margin-bottom:1.1rem;
-}
-h2 em{font-style:italic;color:var(--gold)}
+.sec-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);display:block;margin-bottom:1rem}
+h2{font-family:'Merriweather',serif;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;line-height:1.2;color:#fff;margin-bottom:1.5rem}
 
-.divider{height:1px;background:var(--border);max-width:760px;margin:0 auto}
-
-/* COMO FUNCIONA — visual simples */
+/* COMO FUNCIONA */
 .how-sec{background:var(--bg2)}
-.how-intro{font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:2.5rem}
-.how-intro strong{color:var(--text)}
-
-.how-steps{display:flex;flex-direction:column;gap:1px;border-radius:14px;overflow:hidden;border:1px solid var(--border)}
+.how-steps{display:grid;gap:1.5rem;margin-top:2.5rem}
 .how-step{
-  display:flex;gap:1.25rem;align-items:flex-start;
-  padding:1.4rem 1.6rem;background:var(--bg3);
-  border-bottom:1px solid var(--border);
-  transition:background .2s;
+  display:flex;gap:1.5rem;padding:2rem;
+  background:var(--bg3);border-radius:20px;
+  border:1px solid var(--border);
 }
-.how-step:last-child{border-bottom:none}
-.how-step:hover{background:var(--bg4)}
-.how-n{
-  font-family:'Merriweather',serif;
-  font-size:2rem;font-weight:700;
-  color:rgba(230,168,23,0.18);
-  line-height:1;flex-shrink:0;width:40px;
-}
-.how-step h3{font-size:1rem;font-weight:700;color:#fff;margin-bottom:.3rem}
-.how-step p{font-size:.88rem;color:var(--muted);line-height:1.65}
+.how-n{font-family:'Merriweather',serif;font-size:2.5rem;font-weight:700;color:var(--gold-dim);line-height:1}
 
-/* HISTÓRIA EINSTEIN */
-.story-sec{background:var(--bg)}
-.story-body{font-size:1rem;color:var(--text);line-height:1.9}
-.story-body p{margin-bottom:1.15rem}
-.story-body strong{color:#fff}
-.story-body em{color:var(--gold);font-style:normal;font-weight:600}
+/* HISTÓRIA PROGRESSIVA */
+.story-body{font-size:1.05rem;line-height:1.8;color:var(--text)}
+.story-step{display:none;margin-top:1.5rem}
+.story-step.active{display:block;animation:fup .5s ease forwards}
 .highlight-box{
-  background:var(--bg3);
-  border-left:3px solid var(--gold);
-  border-radius:0 12px 12px 0;
-  padding:1.1rem 1.4rem;
-  margin:1.75rem 0;
-  font-size:.98rem;
-  line-height:1.8;
-  font-style:italic;
-  color:var(--text);
+  background:var(--bg3);border-left:4px solid var(--gold);
+  border-radius:4px 16px 16px 4px;padding:2rem;margin:2rem 0;
 }
-
-/* DEPOIMENTOS */
-.test-sec{background:var(--bg2)}
-.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:2.25rem}
-.test-card{
-  background:var(--bg3);border:1px solid var(--border);
-  border-radius:14px;padding:1.4rem;
+.btn-continue-reading{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--gold-dim);color:var(--gold);
+  border:1px solid var(--gold-border);
+  padding:.8rem 1.5rem;border-radius:10px;
+  font-weight:700;cursor:pointer;transition:.3s;
 }
-.stars{color:var(--gold);font-size:.85rem;letter-spacing:2px;margin-bottom:.65rem}
-.test-q{font-size:.93rem;font-style:italic;color:var(--text);line-height:1.7;margin-bottom:1rem}
-.test-who{display:flex;align-items:center;gap:10px}
-.test-av{
-  width:34px;height:34px;border-radius:50%;
-  background:var(--gold-dim);border:1px solid var(--gold-border);
-  display:flex;align-items:center;justify-content:center;
-  font-size:.78rem;font-weight:700;color:var(--gold);
-  flex-shrink:0;
-}
-.test-name{font-size:.85rem;font-weight:700;color:#fff}
-.test-loc{font-size:.76rem;color:var(--muted)}
+.btn-continue-reading:hover{background:rgba(230,168,23,0.2)}
 
 /* OFERTA */
 .offer-sec{background:var(--bg2);text-align:center}
 .offer-card{
-  background:var(--bg3);
-  border:1px solid var(--gold-border);
-  border-radius:20px;padding:2.5rem 1.75rem;
-  max-width:500px;margin:2rem auto 0;
-  position:relative;overflow:hidden;
-  box-shadow:0 0 60px rgba(230,168,23,0.08);
+  background:var(--bg3);border:1px solid var(--gold-border);
+  border-radius:24px;padding:3rem 2rem;max-width:500px;margin:0 auto;
 }
-.offer-card::before{
-  content:'';position:absolute;
-  top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+.price-free{font-family:'Merriweather',serif;font-size:3.5rem;font-weight:700;color:#fff;margin:1rem 0}
+.btn-cta-offer{
+    display:block;width:100%;background:var(--gold);
+    color:#0a0a0f;font-weight:800;font-size:1.1rem;
+    padding:1.2rem;border-radius:12px;text-decoration:none;
+    margin-top:2rem;transition:.3s;box-shadow:0 10px 30px rgba(230,168,23,0.3);
 }
-.price-badge{
-  display:inline-block;
-  background:rgba(21,128,61,0.15);border:1px solid rgba(21,128,61,0.3);
-  color:#4ade80;font-size:.72rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:.1em;
-  padding:4px 12px;border-radius:20px;margin-bottom:.75rem;
-}
-.price-was{font-size:.95rem;color:var(--muted);text-decoration:line-through;margin-bottom:.2rem}
-.price-free{
-  font-family:'Merriweather',serif;
-  font-size:3rem;font-weight:700;
-  color:#fff;line-height:1;margin-bottom:.2rem;
-}
-.price-then{font-size:.9rem;color:var(--muted);margin-bottom:.25rem}
-.price-then strong{color:var(--gold);font-size:1.2rem}
-.price-note{
-  display:inline-block;
-  background:var(--bg4);border:1px solid var(--border);
-  border-radius:20px;padding:3px 14px;
-  font-size:.8rem;color:var(--muted);margin-bottom:2rem;
-}
-
-.bonus-list{text-align:left;margin-bottom:2rem;display:flex;flex-direction:column;gap:9px}
-.bonus-item{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--text)}
-.check{
-  width:18px;height:18px;border-radius:50%;flex-shrink:0;
-  background:rgba(21,128,61,0.15);border:1px solid rgba(21,128,61,0.35);
-  display:flex;align-items:center;justify-content:center;
-  font-size:9px;color:#4ade80;font-weight:700;
-}
-
-.guar-row{
-  display:flex;align-items:center;gap:10px;
-  margin-top:1rem;padding:.85rem 1rem;
-  background:var(--bg4);
-  border:1px solid var(--border);border-radius:10px;
-  text-align:left;font-size:.82rem;color:var(--muted);
-}
-.guar-row strong{color:var(--text)}
 
 /* FAQ */
-.faq-sec{background:var(--bg)}
-.faq-list{margin-top:1.75rem;border:1px solid var(--border);border-radius:14px;overflow:hidden}
-.faq-item{border-bottom:1px solid var(--border)}
-.faq-item:last-child{border-bottom:none}
+.faq-list{margin-top:2rem;border:1px solid var(--border);border-radius:16px;overflow:hidden}
 .faq-btn{
-  width:100%;background:var(--bg2);border:none;
-  color:var(--text);font-family:'Open Sans',sans-serif;
-  font-size:.95rem;font-weight:600;
-  padding:1.1rem 1.25rem;text-align:left;cursor:pointer;
-  display:flex;justify-content:space-between;align-items:center;gap:1rem;
-  transition:background .18s;
+  width:100%;padding:1.5rem;background:var(--bg2);border:none;
+  color:#fff;text-align:left;display:flex;justify-content:space-between;cursor:pointer;
 }
-.faq-btn:hover{background:var(--bg3)}
-.faq-plus{color:var(--gold);font-size:1.2rem;flex-shrink:0;transition:transform .22s;line-height:1}
-.faq-item.open .faq-plus{transform:rotate(45deg)}
-.faq-body{
-  max-height:0;overflow:hidden;
-  transition:max-height .28s ease,padding .18s;
-  font-size:.9rem;color:var(--muted);line-height:1.75;
-  padding:0 1.25rem;background:var(--bg3);
-}
-.faq-item.open .faq-body{max-height:180px;padding:0 1.25rem 1rem}
+.faq-body{max-height:0;overflow:hidden;transition:0.3s ease;background:var(--bg3);padding:0 1.5rem}
+.faq-item.open .faq-body{max-height:200px;padding:1.5rem}
 
-/* FECHAMENTO */
-.close-sec{background:var(--bg2);text-align:center;padding:5rem 1.25rem}
-.close-body{
-  font-size:1rem;color:var(--muted);
-  max-width:580px;margin:1rem auto 2.5rem;line-height:1.9;
-}
-.close-body strong{color:var(--text)}
-.close-body em{color:var(--gold);font-style:normal;font-weight:600}
-
-footer{
-  background:var(--bg);
-  border-top:1px solid var(--border);
-  padding:2rem 1.25rem;text-align:center;
-  font-size:.76rem;color:var(--muted);line-height:2.2;
-}
-footer a{color:var(--muted);text-decoration:underline}
+footer{padding:3rem 1.25rem;text-align:center;font-size:.8rem;color:var(--muted);border-top:1px solid var(--border)}
 
 @media(max-width:600px){
-  section{padding:3.5rem 1rem}
-  .offer-card{padding:1.75rem 1rem}
-  .hero h1{font-size:1.75rem}
-  .anchor-card{padding:1.25rem}
+    .how-step{flex-direction:column;gap:1rem}
+    .carousel-container{margin-bottom: 2rem;}
 }
-
-/* Cards progressivos Einstein */
-.story-step{display:none;margin-top:1rem}
-.story-step.active{display:block;animation:fup .4s ease forwards}
-.hook-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--orange);display:block;margin-bottom:.85rem}
-.btn-continue-reading{
-  display:inline-flex;align-items:center;gap:6px;
-  margin-top:1.25rem;background:transparent;
-  border:1px solid var(--orange-border);
-  color:var(--orange);font-size:.88rem;font-weight:600;
-  padding:.6rem 1.1rem;border-radius:8px;cursor:pointer;
-  font-family:'Open Sans',sans-serif;transition:all .18s;
-}
-.btn-continue-reading:hover{background:var(--orange-dim);border-color:var(--orange)}
-
-@keyframes scrollInfinite{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.benefits-carousel{display:flex;width:max-content;animation:scrollInfinite 30s linear infinite;gap:16px;padding-left:16px}
-.benefits-carousel:hover{animation-play-state:paused}
-.benefits-card{width:240px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:1.75rem 1.5rem;border-radius:16px;text-align:center;flex-shrink:0;transition:all .3s ease}
-.benefits-card:hover{transform:translateY(-6px);border-color:var(--gold)}
-.benefits-icon{font-size:2.2rem;margin-bottom:1rem;display:block}
-.benefits-card h3{font-size:1rem;margin-bottom:.5rem;color:#fff;font-weight:700}
-.benefits-card p{font-size:.85rem;color:var(--muted);line-height:1.5}
 </style>
-
 </head>
 <body>
 
 <div class="logo-top">NeuroShift</div>
 
+<!-- BOTÃO FLUTUANTE (STICKY) -->
+<div class="sticky-cta-container" id="stickyCta">
+    <a href="#oferta" class="btn-sticky">
+        Quero Ativar Minha Mente Agora →
+    </a>
+</div>
+
 <!-- ══ HERO ══ -->
-<div class="hero">
+<div class="hero" id="hero">
   <div class="hero-eyebrow">Protocolo de ativação neural</div>
 
-  <h1>Ela só colocou o fone<br>por <em>alguns minutos.</em><br>No terceiro dia, tudo mudou.</h1>
+  <h1>Ela só colocou o fone por <em>alguns minutos.</em> No terceiro dia, tudo mudou.</h1>
 
-  <p class="hero-sub">Mais clara. Mais focada. Lembrando de tudo sem esforço.<br>Isso é o que o protocolo diário de frequências theta faz pelo seu cérebro.</p>
+  <p class="hero-sub">Mais clara. Mais focada. Lembrando de tudo sem esforço. Conheça o protocolo diário de frequências theta.</p>
 
-  </div>
-
-  <!-- CARROSSEL BENEFÍCIOS -->
-  <div style="text-align:center;margin-bottom:1.25rem"><span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--gold)">Sua Nova Mente</span><h3 style="font-family:'Merriweather',serif;font-size:1.2rem;font-weight:700;color:#fff;margin-top:.4rem">O que muda quando seu cérebro é ativado</h3></div>
-  <div style="width:100%;overflow:hidden;margin:2rem 0 2.5rem">
+  <span class="hero-benefits-label">Sua Nova Mente Ativada</span>
+  
+  <div class="carousel-container">
     <div class="benefits-carousel">
-      <div class="benefits-card"><span class="benefits-icon">&#x1F48E;</span><h3>Memória Clara</h3><p>Lembre-se de nomes, dados e compromissos sem esforço ou "brancos" mentais.</p></div>
-      <div class="benefits-card"><span class="benefits-icon">&#x1F3AF;</span><h3>Foco Prolongado</h3><p>Termine tarefas complexas em metade do tempo com concentração inabalável.</p></div>
-      <div class="benefits-card"><span class="benefits-icon">&#x26A1;</span><h3>Energia Estável</h3><p>Dê adeus ao cansaço mental no meio da tarde e sinta-se produtivo até o fim do dia.</p></div>
-      <div class="benefits-card"><span class="benefits-icon">&#x1F680;</span><h3>Zero Procrastinação</h3><p>A clareza mental remove a resistência para começar o que precisa ser feito.</p></div>
-      <div class="benefits-card"><span class="benefits-icon">&#x2696;&#xFE0F;</span><h3>Decisões Rápidas</h3><p>Raciocínio lógico e intuitivo em harmonia para escolhas mais assertivas.</p></div>
-      <div class="benefits-card"><span class="benefits-icon">&#x1F9D8;</span><h3>Paz Mental</h3><p>Reduza o ruído interno e a ansiedade através do equilíbrio das ondas cerebrais.</p></div>
-      <div class="benefits-card"><span class="benefits-icon">&#x1F48E;</span><h3>Memória Clara</h3><p>Lembre-se de nomes, dados e compromissos sem esforço ou "brancos" mentais.</p></div>
-      <div class="benefits-card"><span class="benefits-icon">&#x1F3AF;</span><h3>Foco Prolongado</h3><p>Termine tarefas complexas em metade do tempo com concentração inabalável.</p></div>
-      <div class="benefits-card"><span class="benefits-icon">&#x26A1;</span><h3>Energia Estável</h3><p>Dê adeus ao cansaço mental no meio da tarde e sinta-se produtivo até o fim do dia.</p></div>
-      <div class="benefits-card"><span class="benefits-icon">&#x1F680;</span><h3>Zero Procrastinação</h3><p>A clareza mental remove a resistência para começar o que precisa ser feito.</p></div>
+      <div class="benefits-card"><span class="benefits-icon">💎</span><h3>Memória Clara</h3><p>Nomes, dados e compromissos sem esforço ou "brancos".</p></div>
+      <div class="benefits-card"><span class="benefits-icon">🎯</span><h3>Foco Inabalável</h3><p>Termine tarefas complexas em metade do tempo.</p></div>
+      <div class="benefits-card"><span class="benefits-icon">⚡</span><h3>Energia Mental</h3><p>Dê adeus ao cansaço e à névoa cerebral da tarde.</p></div>
+      <div class="benefits-card"><span class="benefits-icon">🚀</span><h3>Zero Procrastinação</h3><p>A clareza mental remove a resistência para começar.</p></div>
+      <div class="benefits-card"><span class="benefits-icon">🧘</span><h3>Paz Mental</h3><p>Reduza o ruído interno e a ansiedade cerebral.</p></div>
+      <!-- Duplicatas para loop -->
+      <div class="benefits-card"><span class="benefits-icon">💎</span><h3>Memória Clara</h3><p>Nomes, dados e compromissos sem esforço ou "brancos".</p></div>
+      <div class="benefits-card"><span class="benefits-icon">🎯</span><h3>Foco Inabalável</h3><p>Termine tarefas complexas em metade do tempo.</p></div>
+      <div class="benefits-card"><span class="benefits-icon">⚡</span><h3>Energia Mental</h3><p>Dê adeus ao cansaço e à névoa cerebral da tarde.</p></div>
     </div>
   </div>
-
-  <a href="#oferta" class="btn-cta">Quero ativar meu cérebro →</a>
-  <p class="hero-fine">Acesso imediato · Cancele quando quiser</p>
 </div>
 
 <!-- STRIP -->
 <div class="strip">
-  <div class="strip-item"><strong>+12.400</strong> assinantes ativos</div>
-  <div class="strip-dot"></div>
-  <div class="strip-item">⭐ <strong>4.9/5</strong> avaliação média</div>
-  <div class="strip-dot"></div>
-  <div class="strip-item">Baseado em <strong>neurociência</strong></div>
-  <div class="strip-dot"></div>
-  <div class="strip-item"><strong>R$8,90</strong> · cancele quando quiser</div>
+  <div class="strip-item"><strong>+12.400</strong> membros</div>
+  <div class="strip-item">⭐ <strong>4.9/5</strong> avaliação</div>
+  <div class="strip-item"><strong>Neurociência</strong> aplicada</div>
 </div>
 
 <!-- COMO FUNCIONA -->
 <section class="how-sec">
   <div class="sec-inner">
-    <span class="sec-label">Como funciona</span>
-    <h2 class="reveal">Simples o suficiente para<br><em>qualquer pessoa conseguir.</em></h2>
-    <p class="how-intro reveal">Não é meditação difícil. Não é treino cognitivo exaustivo. É colocar o fone, apertar play — e deixar as frequências theta fazerem o trabalho enquanto você descansa.</p>
-    <div class="how-steps reveal">
-      <div class="how-step">
+    <span class="sec-label">O Método</span>
+    <h2 class="reveal">Tão simples que parece <em>mágica</em>. Mas é ciência.</h2>
+    <div class="how-steps">
+      <div class="how-step reveal">
         <div class="how-n">01</div>
         <div>
-          <h3>Acesse a faixa do dia na área de aluno</h3>
-          <p>Um áudio novo todo dia, desenvolvido para sincronizar os dois hemisférios do seu cérebro progressivamente. Direto do celular.</p>
+          <h3>Aperte o Play</h3>
+          <p>Um áudio novo todo dia desenvolvido para sincronizar os dois hemisférios do seu cérebro.</p>
         </div>
       </div>
-      <div class="how-step">
+      <div class="how-step reveal">
         <div class="how-n">02</div>
         <div>
-          <h3>Coloque o fone e relaxe por alguns minutos</h3>
-          <p>De manhã, no intervalo ou antes de dormir — onde encaixar na sua rotina. A sessão dura entre 10 e 20 minutos.</p>
+          <h3>Relaxe por 15min</h3>
+          <p>Não precisa meditar. Basta ouvir com fones enquanto toma café ou relaxa.</p>
         </div>
       </div>
-      <div class="how-step">
+      <div class="how-step reveal">
         <div class="how-n">03</div>
         <div>
-          <h3>Os resultados aparecem com a consistência</h3>
-          <p>A maioria das pessoas sente diferença nos primeiros 3 dias. Memória, foco e clareza se consolidam ao longo das semanas de uso regular.</p>
+          <h3>Sinta a Mudança</h3>
+          <p>A clareza mental e a memória afiada tornam-se seu novo "normal" em poucos dias.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>
-
-<div style="text-align:center;padding:2.5rem 1.25rem;background:var(--bg2)">
-  <a href="https://pay.hotmart.com/J105513010I?off=4coph92i" class="btn-cta">Quero testar agora →</a>
-  <p style="font-size:.8rem;color:var(--muted);margin-top:.75rem">Cancele quando quiser</p>
-</div>
 
 <!-- HISTÓRIA EINSTEIN -->
 <section class="story-sec">
   <div class="sec-inner">
-    <span class="sec-label">A descoberta</span>
-    <h2 class="reveal">Por que algumas pessoas têm memória e foco <span>excepcionais</span> — e o que elas fazem diferente</h2>
+    <span class="sec-label">A Descoberta</span>
+    <h2 class="reveal">O segredo roubado do cérebro de <em>Albert Einstein</em></h2>
 
     <div class="story-body reveal">
-      <p style="margin-bottom:1.5rem">Você já percebeu que certas pessoas parecem ter um superpoder? Elas resolvem problemas com facilidade, lembram de tudo, mantêm o foco por horas e ainda chegam em casa com energia.</p>
-      <p style="margin-bottom:1.5rem">Enquanto isso, a maioria de nós trabalha cada vez mais e rende cada vez menos.</p>
-      <p style="font-weight:700;color:var(--orange);margin-bottom:1.5rem">A resposta está em um dos casos mais bizarros da história da ciência: o roubo do cérebro de Albert Einstein.</p>
-
+      <p>Você já se perguntou por que algumas pessoas parecem ter uma mente que nunca falha?</p>
+      
       <div class="story-step active" id="step-1">
         <div class="highlight-box">
-          <span class="hook-label">● Arquivo Histórico</span>
-          <p style="font-size:1.15rem;line-height:1.4;color:#fff;margin-bottom:1.2rem;font-family:'Merriweather',serif;font-weight:700;font-style:italic;">
-            "Existem segredos que a ciência tentou esconder por 40 anos... e o que aconteceu naquele porão é a chave para destravar sua mente hoje."
-          </p>
-          <p style="margin-bottom:1rem"><strong>18 de abril de 1955.</strong> O mundo lamentava a morte de Albert Einstein. Mas, enquanto os jornais imprimiam as manchetes, algo bizarro acontecia nos bastidores do Hospital de Princeton.</p>
-          <p style="margin-bottom:1rem">O Dr. Thomas Harvey, responsável pela autópsia, tomou uma decisão perturbadora: <strong>ele roubou o cérebro de Einstein.</strong></p>
-          <p style="font-size:.95rem;color:var(--muted)">Sem autorização da família. Sem permissão legal. Ele colocou o órgão em potes de vidro, escondeu em caixas e <strong>desapareceu.</strong> Por décadas, o paradeiro do cérebro mais brilhante do século foi um mistério absoluto.</p>
-          <button class="btn-continue-reading" onclick="revealStep(2, this)">→ Descobrir o que ele encontrou</button>
+          <p style="font-family:'Merriweather',serif; font-size:1.2rem; margin-bottom:1rem; color:#fff"><strong>O Caso Thomas Harvey</strong></p>
+          <p>Em 1955, o médico Thomas Harvey roubou o cérebro de Einstein durante a autópsia. Ele passou 40 anos escondendo o órgão em potes de cidra para descobrir uma única coisa...</p>
+          <button class="btn-continue-reading" onclick="revealStep(2, this)">O que ele descobriu? ↓</button>
         </div>
       </div>
 
       <div class="story-step" id="step-2">
+        <p>Ele descobriu que a "ponte" entre os hemisférios de Einstein era 15% mais espessa que o normal. Einstein não nasceu assim. Ele treinou essa conexão tocando violino.</p>
         <div class="highlight-box">
-          Quando neurocientistas finalmente estudaram essas partes com tecnologia moderna, descobriram algo que mudou tudo: <em>o cérebro de Einstein era 15% menor que o de um adulto médio.</em> Então como ele se tornou o maior gênio da história moderna?
+            O ato de tocar levava seu cérebro à <strong>Frequência Theta</strong>. O NeuroShift replica esse exato estado neural sem que você precise tocar uma nota sequer.
         </div>
-        <button class="btn-continue-reading" onclick="revealStep(3, this)">→ Continuar lendo</button>
+        <button class="btn-continue-reading" onclick="revealStep(3, this)">Como o NeuroShift faz isso? ↓</button>
       </div>
 
       <div class="story-step" id="step-3">
-        <div class="highlight-box">
-          A resposta estava numa estrutura chamada <strong>corpus callosum</strong>: a "ponte" que conecta o hemisfério lógico com o criativo. No cérebro de Einstein, essa ponte era excepcionalmente espessa e desenvolvida. Mas aqui está o que a maioria das pessoas não sabe: <em>Einstein não nasceu assim.</em>
-        </div>
-        <button class="btn-continue-reading" onclick="revealStep(4, this)">→ Continuar lendo</button>
-      </div>
-
-      <div class="story-step" id="step-4">
-        <div class="highlight-box">
-          Aos seis anos, ele começou a tocar violino. Tocava horas todos os dias. Sempre que travava num problema difícil, pegava o violino e a solução vinha. O que parecia coincidência era, na verdade, ciência: <strong>a prática do violino fortalecia exatamente essa ponte neural entre lógica e criatividade.</strong>
-        </div>
-        <button class="btn-continue-reading" onclick="revealStep(5, this)">→ Continuar lendo</button>
-      </div>
-
-      <div class="story-step" id="step-5">
-        <div class="highlight-box">
-          A pergunta que obsedou pesquisadores foi: <em>é possível replicar o efeito de Einstein sem décadas de violino?</em> Depois de anos pesquisando neuroplasticidade e frequências sonoras, a resposta é sim. E é muito mais simples do que parece.
-        </div>
-        <button class="btn-continue-reading" onclick="revealStep(6, this)">→ Continuar lendo</button>
-      </div>
-
-      <div class="story-step" id="step-6">
-        <div class="highlight-box">
-          Neurocientistas identificaram que o estado mental de alta performance (chamado de <strong>onda theta 4–8 Hz</strong>) é o mesmo que Einstein acessava enquanto tocava. O NeuroShift usa frequências de áudio desenvolvidas para levar seu cérebro a esse estado todos os dias, sem anos de violino e sem meditação complicada.
-        </div>
-      </div>
-
-    </div>
-    <div style="text-align:center;margin-top:3rem">
-      <a href="https://pay.hotmart.com/J105513010I?off=4coph92i" class="btn-cta">Sim, quero começar agora →</a>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- DEPOIMENTOS -->
-<section class="test-sec">
-  <div class="sec-inner-wide" style="text-align:center">
-    <span class="sec-label">O que estão dizendo</span>
-    <h2 class="reveal">Pessoas que só colocaram o fone</h2>
-    <div class="test-grid">
-      <div class="test-card reveal">
-        <div class="stars">★★★★★</div>
-        <p class="test-q">"Na terceira sessão já senti diferença. Consegui ler 40 páginas sem olhar o celular uma vez. Não fazia isso há anos."</p>
-        <div class="test-who">
-          <div class="test-av">RC</div>
-          <div><div class="test-name">Ricardo C.</div><div class="test-loc">Empresário · São Paulo</div></div>
-        </div>
-      </div>
-      <div class="test-card reveal">
-        <div class="stars">★★★★★</div>
-        <p class="test-q">"Estava esquecendo o nome dos meus próprios clientes. Depois de algumas semanas com o protocolo, minha memória voltou como há dez anos atrás."</p>
-        <div class="test-who">
-          <div class="test-av">MA</div>
-          <div><div class="test-name">Marcos A.</div><div class="test-loc">Advogado · Belo Horizonte</div></div>
-        </div>
-      </div>
-      <div class="test-card reveal">
-        <div class="stars">★★★★★</div>
-        <p class="test-q">"Passei anos achando que dispersão era meu feitio. Não era. Era meu cérebro pedindo socorro. O NeuroShift foi minha virada."</p>
-        <div class="test-who">
-          <div class="test-av">FT</div>
-          <div><div class="test-name">Fernanda T.</div><div class="test-loc">Designer · Rio de Janeiro</div></div>
-        </div>
+        <p>Através de frequências binaurais e pulsos isocrônicos, nós "guiamos" suas ondas cerebrais para o estado Theta em minutos. É como um atalho tecnológico para a alta performance mental.</p>
       </div>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>
 
 <!-- OFERTA -->
 <section class="offer-sec" id="oferta">
   <div class="sec-inner">
-    <span class="sec-label">Comece hoje</span>
-    <h2 class="reveal">Acesso completo ao <em>NeuroShift</em></h2>
     <div class="offer-card reveal">
-
-      <!-- TRIAL — destaque único, sem floreio -->
-      <div style="text-align:center;border-bottom:1px solid var(--border);padding-bottom:1.5rem;margin-bottom:1.5rem">
-        <div style="font-size:2.5rem;font-weight:700;color:var(--gold);line-height:1.1"><sup style="font-size:1.2rem">R$</sup>8,90</div>
-        <div style="font-size:.85rem;color:var(--muted);margin-top:.4rem">cancele quando quiser</div>
+      <span class="sec-label">Acesso Vitalício</span>
+      <h2 style="margin-bottom:0">NeuroShift Pro</h2>
+      <div class="price-free">R$ 8,90</div>
+      <p style="color:var(--muted)">Pagamento único. Sem mensalidades.</p>
+      
+      <div style="text-align:left; margin-top:2rem">
+        <p style="margin-bottom:0.5rem">✅ Áudios Theta Diários</p>
+        <p style="margin-bottom:0.5rem">✅ Guia de Ativação Neural</p>
+        <p style="margin-bottom:0.5rem">✅ Bônus: Sono Profundo</p>
       </div>
 
-      <div class="bonus-list">
-        <div class="bonus-item"><div class="check">✓</div>Áudio theta novo todo dia na área de aluno</div>
-        <div class="bonus-item"><div class="check">✓</div>Protocolo completo de ativação neural</div>
-        <div class="bonus-item"><div class="check">✓</div>Guia de neurociência aplicada (e-book)</div>
-        <div class="bonus-item"><div class="check">✓</div>Rastreador diário de clareza mental</div>
-        <div class="bonus-item"><div class="check">✓</div>Rotina matinal de alto desempenho</div>
-        <div class="bonus-item"><div class="check">✓</div>Suporte contínuo incluído</div>
-      </div>
-
-      <a href="https://pay.hotmart.com/J105513010I?off=4coph92i" class="btn-cta-block">Garantir meu acesso por R$8,90 →</a>
-      <div class="guar-row" style="margin-top:1rem">
-        🛡️ <span><strong>Satisfação garantida.</strong> Cancele quando quiser, sem burocracia e sem multa.</span>
-      </div>
+      <a href="https://pay.hotmart.com/J105513010I?off=4coph92i" class="btn-cta-offer">Garantir Meu Acesso Agora</a>
+      <p style="font-size:.7rem; color:var(--muted); margin-top:1rem">🛡️ Garantia incondicional de 7 dias</p>
     </div>
   </div>
 </section>
@@ -602,65 +361,90 @@ footer a{color:var(--muted);text-decoration:underline}
 <!-- FAQ -->
 <section class="faq-sec">
   <div class="sec-inner">
-    <span class="sec-label">Dúvidas frequentes</span>
-    <h2 class="reveal">Perguntas que todo mundo faz</h2>
-    <div class="faq-list reveal">
+    <h2 style="text-align:center">Dúvidas Frequentes</h2>
+    <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">Precisa de algum equipamento especial? <span class="faq-plus">+</span></button>
-        <div class="faq-body">Não. Qualquer fone de ouvido funciona, inclusive o que veio com seu celular. O protocolo foi desenvolvido para ser acessível para qualquer pessoa, em qualquer lugar.</div>
+        <button class="faq-btn" onclick="toggleFaq(this)">Preciso de fones de ouvido? <span>+</span></button>
+        <div class="faq-body"><p>Sim. Para que a sincronização dos hemisférios funcione, é necessário o uso de fones (qualquer modelo serve).</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">Quanto tempo por dia preciso dedicar? <span class="faq-plus">+</span></button>
-        <div class="faq-body">As sessões variam entre 10 e 20 minutos. Podem ser feitas de manhã, no intervalo do trabalho ou antes de dormir — onde encaixar melhor na sua rotina.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">Em quanto tempo aparecem os resultados? <span class="faq-plus">+</span></button>
-        <div class="faq-body">A maioria das pessoas relata maior clareza mental já nos primeiros 3 dias. Resultados mais sólidos em memória e foco se consolidam ao longo das primeiras semanas de uso regular.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">Posso cancelar quando quiser? <span class="faq-plus">+</span></button>
-        <div class="faq-body">Sim. Cancele a qualquer momento, sem burocracia, sem multa e sem perguntas. O cancelamento é simples e sem burocracia.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">Funciona para qualquer idade? <span class="faq-plus">+</span></button>
-        <div class="faq-body">Sim. O protocolo foi desenvolvido para adultos de qualquer faixa etária. Muitos assinantes com mais de 50 anos relatam os resultados mais expressivos.</div>
+        <button class="faq-btn" onclick="toggleFaq(this)">Em quanto tempo sinto os resultados? <span>+</span></button>
+        <div class="faq-body"><p>Muitos usuários relatam maior clareza já na primeira sessão, mas os resultados permanentes em memória e foco surgem após 3 a 5 dias de uso.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FECHAMENTO -->
-<section class="close-sec">
-  <div class="sec-inner">
-    <span class="sec-label">A escolha é sua</span>
-    <h2 class="reveal">Dois caminhos a partir de agora</h2>
-    <p class="close-body reveal">
-      <strong>Caminho 1:</strong> feche essa página. Continue convivendo com os lapsos de memória, a dispersão, a sensação de que seu cérebro poderia render muito mais.<br><br>
-      <em>Caminho 2:</em> coloque o fone por alguns minutos — por R$8,90. Se não sentir diferença, cancele quando quiser — sem multa, sem perguntas.
-    </p>
-    <a href="https://pay.hotmart.com/J105513010I?off=4coph92i" class="btn-cta reveal">Quero minha mente afiada →</a>
-  </div>
-</section>
-
 <footer>
-  © 2025 NeuroShift · Todos os direitos reservados<br>
-  <a href="#">Termos de Uso</a> · <a href="#">Política de Privacidade</a> · <a href="#">Suporte</a><br>
-  <span style="font-size:.7rem;opacity:.65">Este produto não substitui acompanhamento médico. Resultados individuais podem variar.</span>
+  <p>© 2025 NeuroShift · Neurociência aplicada ao desempenho</p>
+  <div style="margin-top:1rem; opacity:0.5">
+    <a href="#" style="color:#fff; text-decoration:none; margin:0 10px">Termos</a>
+    <a href="#" style="color:#fff; text-decoration:none; margin:0 10px">Privacidade</a>
+  </div>
 </footer>
 
 <script>
-function toggleFaq(btn){btn.parentElement.classList.toggle('open')}
+// LÓGICA DO BOTÃO FLUTUANTE (STICKY CTA)
+const stickyCta = document.getElementById('stickyCta');
+const hero = document.getElementById('hero');
+const oferta = document.getElementById('oferta');
 
+const observerOptions = { threshold: 0.1 };
+
+// Revelar botão após passar a hero
+const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            stickyCta.classList.add('visible');
+        } else {
+            stickyCta.classList.remove('visible');
+        }
+    });
+}, observerOptions);
+
+// Esconder botão ao chegar na oferta (para não conflitar)
+const offerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            stickyCta.classList.add('hidden-offer');
+        } else {
+            stickyCta.classList.remove('hidden-offer');
+        }
+    });
+}, observerOptions);
+
+heroObserver.observe(hero);
+offerObserver.observe(oferta);
+
+// STORY PROGRESSION
 function revealStep(n, btn) {
-  btn.style.display = 'none';
-  const next = document.getElementById('step-' + n);
-  if (next) { next.style.display = 'block'; next.style.animation = 'fup .4s ease forwards'; }
+    btn.style.display = 'none';
+    const next = document.getElementById('step-' + n);
+    if (next) {
+        next.classList.add('active');
+        setTimeout(() => {
+            next.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+    }
 }
 
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active')})
-},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+// FAQ
+function toggleFaq(btn) {
+    const item = btn.parentElement;
+    item.classList.toggle('open');
+    const span = btn.querySelector('span');
+    span.textContent = item.classList.contains('open') ? '−' : '+';
+}
+
+// REVEAL ANIMATION
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
+
 </body>
 </html>
