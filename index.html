@@ -78,7 +78,7 @@ body{
   max-width:600px;margin:0 auto 2.5rem;
 }
 
-/* CARROSSEL BENEFÍCIOS (DENTRO DA HERO) */
+/* CARROSSEL BENEFÍCIOS (DINÂMICO) */
 .hero-benefits-label {
     font-size: .65rem;
     font-weight: 800;
@@ -98,7 +98,7 @@ body{
 }
 
 @keyframes scrollInfinite{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.benefits-carousel{display:flex;width:max-content;animation:scrollInfinite 40s linear infinite;gap:16px}
+.benefits-carousel{display:flex;width:max-content;animation:scrollInfinite 25s linear infinite;gap:16px}
 .benefits-card{
     width:260px;
     background:var(--bg2);
@@ -112,7 +112,7 @@ body{
 .benefits-card h3{font-size:0.95rem;margin-bottom:.4rem;color:#fff;font-weight:700}
 .benefits-card p{font-size:.8rem;color:var(--muted);line-height:1.5}
 
-/* ── STICKY CTA (GLASSMORPHISM) ── */
+/* ── STICKY CTA ── */
 .sticky-cta-container {
     position: fixed;
     bottom: 24px;
@@ -155,23 +155,37 @@ body{
     animation: pulse-gold 2s infinite;
 }
 
-/* ── STRIP ── */
-.strip{
-  background:var(--bg2);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  padding:1.1rem 1.25rem;
-  display:flex;align-items:center;
-  justify-content:center;gap:2rem;flex-wrap:wrap;
-}
-.strip-item{font-size:.8rem;color:var(--muted)}
-.strip-item strong{color:var(--text)}
-
-/* ── SECTIONS ── */
+/* ── SEÇÕES GLOBAIS ── */
 section{padding:5rem 1.25rem}
 .sec-inner{max-width:760px;margin:0 auto}
+.sec-inner-wide{max-width:1100px;margin:0 auto}
 .sec-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);display:block;margin-bottom:1rem}
 h2{font-family:'Merriweather',serif;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;line-height:1.2;color:#fff;margin-bottom:1.5rem}
+
+/* ── DEPOIMENTOS ── */
+.test-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 3rem;
+}
+.test-card {
+    background: #15151e;
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+.stars { color: var(--gold); margin-bottom: 1.5rem; font-size: 0.9rem; letter-spacing: 2px; }
+.test-text { font-style: italic; color: #ede8df; line-height: 1.8; margin-bottom: 2rem; font-size: 1rem; }
+.test-user { display: flex; align-items: center; justify-content: center; gap: 15px; text-align: left; }
+.test-avatar {
+    width: 48px; height: 48px; border-radius: 50%; background: #1c1c28;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--gold-border); color: var(--gold); font-weight: 700; font-size: 0.9rem;
+}
+.test-info b { display: block; color: #fff; font-size: 1rem; }
+.test-info span { font-size: 0.8rem; color: var(--muted); }
 
 /* COMO FUNCIONA */
 .how-sec{background:var(--bg2)}
@@ -198,36 +212,48 @@ h2{font-family:'Merriweather',serif;font-size:clamp(1.5rem,4vw,2.2rem);font-weig
   padding:.8rem 1.5rem;border-radius:10px;
   font-weight:700;cursor:pointer;transition:.3s;
 }
-.btn-continue-reading:hover{background:rgba(230,168,23,0.2)}
 
-/* OFERTA */
+/* OFERTA PREMIUM */
 .offer-sec{background:var(--bg2);text-align:center}
 .offer-card{
   background:var(--bg3);border:1px solid var(--gold-border);
-  border-radius:24px;padding:3rem 2rem;max-width:500px;margin:0 auto;
+  border-radius:24px;padding:3.5rem 2rem;max-width:500px;margin:0 auto;
 }
-.price-free{font-family:'Merriweather',serif;font-size:3.5rem;font-weight:700;color:#fff;margin:1rem 0}
+.price-free{font-family:'Merriweather',serif;font-size:3.5rem;font-weight:700;color:#fff;margin:0.5rem 0 0.2rem}
+.offer-note { font-size: 0.85rem; color: var(--muted); display: block; margin-bottom: 2rem; }
+
+.bonus-list { text-align: left; margin: 2rem 0; }
+.bonus-item { 
+    display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; 
+    font-size: 0.95rem; color: #ede8df;
+}
+.check-icon {
+    width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
+    background: rgba(21, 128, 61, 0.15); border: 1px solid rgba(21, 128, 61, 0.35);
+    display: flex; align-items: center; justify-content: center;
+    color: #4ade80; font-size: 11px; font-weight: bold;
+}
+
 .btn-cta-offer{
     display:block;width:100%;background:var(--gold);
     color:#0a0a0f;font-weight:800;font-size:1.1rem;
     padding:1.2rem;border-radius:12px;text-decoration:none;
-    margin-top:2rem;transition:.3s;box-shadow:0 10px 30px rgba(230,168,23,0.3);
+    margin-top:1rem;transition:.3s;box-shadow:0 10px 30px rgba(230,168,23,0.3);
 }
 
 /* FAQ */
 .faq-list{margin-top:2rem;border:1px solid var(--border);border-radius:16px;overflow:hidden}
 .faq-btn{
   width:100%;padding:1.5rem;background:var(--bg2);border:none;
-  color:#fff;text-align:left;display:flex;justify-content:space-between;cursor:pointer;
+  color:#fff;text-align:left;display:flex;justify-content:space-between;cursor:pointer;font-weight:600;
 }
 .faq-body{max-height:0;overflow:hidden;transition:0.3s ease;background:var(--bg3);padding:0 1.5rem}
-.faq-item.open .faq-body{max-height:200px;padding:1.5rem}
+.faq-item.open .faq-body{max-height:300px;padding:1.5rem}
 
 footer{padding:3rem 1.25rem;text-align:center;font-size:.8rem;color:var(--muted);border-top:1px solid var(--border)}
 
 @media(max-width:600px){
     .how-step{flex-direction:column;gap:1rem}
-    .carousel-container{margin-bottom: 2rem;}
 }
 </style>
 </head>
@@ -235,71 +261,65 @@ footer{padding:3rem 1.25rem;text-align:center;font-size:.8rem;color:var(--muted)
 
 <div class="logo-top">NeuroShift</div>
 
-<!-- BOTÃO FLUTUANTE (STICKY) -->
+<!-- BOTÃO FLUTUANTE -->
 <div class="sticky-cta-container" id="stickyCta">
-    <a href="#oferta" class="btn-sticky">
-        Quero Ativar Minha Mente Agora →
-    </a>
+    <a href="#oferta" class="btn-sticky">Quero Ativar Minha Mente →</a>
 </div>
 
-<!-- ══ HERO ══ -->
+<!-- HERO -->
 <div class="hero" id="hero">
   <div class="hero-eyebrow">Protocolo de ativação neural</div>
-
   <h1>Ela só colocou o fone por <em>alguns minutos.</em> No terceiro dia, tudo mudou.</h1>
-
-  <p class="hero-sub">Mais clara. Mais focada. Lembrando de tudo sem esforço. Conheça o protocolo diário de frequências theta.</p>
-
+  <p class="hero-sub">Lembrando de tudo sem esforço e com foco total. Conheça o protocolo diário de frequências theta para otimização cerebral.</p>
   <span class="hero-benefits-label">Sua Nova Mente Ativada</span>
-  
   <div class="carousel-container">
     <div class="benefits-carousel">
-      <div class="benefits-card"><span class="benefits-icon">💎</span><h3>Memória Clara</h3><p>Nomes, dados e compromissos sem esforço ou "brancos".</p></div>
-      <div class="benefits-card"><span class="benefits-icon">🎯</span><h3>Foco Inabalável</h3><p>Termine tarefas complexas em metade do tempo.</p></div>
-      <div class="benefits-card"><span class="benefits-icon">⚡</span><h3>Energia Mental</h3><p>Dê adeus ao cansaço e à névoa cerebral da tarde.</p></div>
-      <div class="benefits-card"><span class="benefits-icon">🚀</span><h3>Zero Procrastinação</h3><p>A clareza mental remove a resistência para começar.</p></div>
-      <div class="benefits-card"><span class="benefits-icon">🧘</span><h3>Paz Mental</h3><p>Reduza o ruído interno e a ansiedade cerebral.</p></div>
-      <!-- Duplicatas para loop -->
-      <div class="benefits-card"><span class="benefits-icon">💎</span><h3>Memória Clara</h3><p>Nomes, dados e compromissos sem esforço ou "brancos".</p></div>
-      <div class="benefits-card"><span class="benefits-icon">🎯</span><h3>Foco Inabalável</h3><p>Termine tarefas complexas em metade do tempo.</p></div>
-      <div class="benefits-card"><span class="benefits-icon">⚡</span><h3>Energia Mental</h3><p>Dê adeus ao cansaço e à névoa cerebral da tarde.</p></div>
+      <!-- SET 1 -->
+      <div class="benefits-card"><span class="benefits-icon">💎</span><h3>Memória Clara</h3><p>Nomes e dados sem esforço ou "brancos".</p></div>
+      <div class="benefits-card"><span class="benefits-icon">🎯</span><h3>Foco Inabalável</h3><p>Concentração profunda por longos períodos.</p></div>
+      <div class="benefits-card"><span class="benefits-icon">⚡</span><h3>Energia Mental</h3><p>Dê adeus ao cansaço e à névoa cerebral.</p></div>
+      <div class="benefits-card"><span class="benefits-icon">🚀</span><h3>Zero Procrastinação</h3><p>Remova a resistência mental para começar.</p></div>
+      <div class="benefits-card"><span class="benefits-icon">🧘</span><h3>Paz Mental</h3><p>Reduza o ruído interno e a ansiedade.</p></div>
+      <!-- SET 2 (LOOP) -->
+      <div class="benefits-card"><span class="benefits-icon">💎</span><h3>Memória Clara</h3><p>Nomes e dados sem esforço ou "brancos".</p></div>
+      <div class="benefits-card"><span class="benefits-icon">🎯</span><h3>Foco Inabalável</h3><p>Concentração profunda por longos períodos.</p></div>
+      <div class="benefits-card"><span class="benefits-icon">⚡</span><h3>Energia Mental</h3><p>Dê adeus ao cansaço e à névoa cerebral.</p></div>
+      <div class="benefits-card"><span class="benefits-icon">🚀</span><h3>Zero Procrastinação</h3><p>Remova a resistência mental para começar.</p></div>
+      <div class="benefits-card"><span class="benefits-icon">🧘</span><h3>Paz Mental</h3><p>Reduza o ruído interno e a ansiedade.</p></div>
+      <!-- SET 3 (LOOP INFINTITO GARANTIDO) -->
+      <div class="benefits-card"><span class="benefits-icon">💎</span><h3>Memória Clara</h3><p>Nomes e dados sem esforço ou "brancos".</p></div>
+      <div class="benefits-card"><span class="benefits-icon">🎯</span><h3>Foco Inabalável</h3><p>Concentração profunda por longos períodos.</p></div>
+      <div class="benefits-card"><span class="benefits-icon">⚡</span><h3>Energia Mental</h3><p>Dê adeus ao cansaço e à névoa cerebral.</p></div>
+      <div class="benefits-card"><span class="benefits-icon">🚀</span><h3>Zero Procrastinação</h3><p>Remova a resistência mental para começar.</p></div>
+      <div class="benefits-card"><span class="benefits-icon">🧘</span><h3>Paz Mental</h3><p>Reduza o ruído interno e a ansiedade.</p></div>
     </div>
   </div>
 </div>
 
-<!-- STRIP -->
-<div class="strip">
-  <div class="strip-item"><strong>+12.400</strong> membros</div>
-  <div class="strip-item">⭐ <strong>4.9/5</strong> avaliação</div>
-  <div class="strip-item"><strong>Neurociência</strong> aplicada</div>
+<!-- STRIP (INFO RÁPIDA) -->
+<div style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:1.1rem 1.25rem; display:flex; align-items:center; justify-content:center; gap:2rem; flex-wrap:wrap;">
+  <div style="font-size:.8rem;color:var(--muted)"><strong>+12.400</strong> membros</div>
+  <div style="font-size:.8rem;color:var(--muted)">⭐ <strong>4.9/5</strong> avaliação</div>
+  <div style="font-size:.8rem;color:var(--muted)"><strong>Neurociência</strong> aplicada</div>
 </div>
 
 <!-- COMO FUNCIONA -->
 <section class="how-sec">
   <div class="sec-inner">
     <span class="sec-label">O Método</span>
-    <h2 class="reveal">Tão simples que parece <em>mágica</em>. Mas é ciência.</h2>
+    <h2 class="reveal">Simples. Prático. Científico.</h2>
     <div class="how-steps">
       <div class="how-step reveal">
         <div class="how-n">01</div>
-        <div>
-          <h3>Aperte o Play</h3>
-          <p>Um áudio novo todo dia desenvolvido para sincronizar os dois hemisférios do seu cérebro.</p>
-        </div>
+        <div><h3>Aperte o Play</h3><p>Um áudio novo todo dia desenvolvido para sincronizar seus hemisférios cerebrais.</p></div>
       </div>
       <div class="how-step reveal">
         <div class="how-n">02</div>
-        <div>
-          <h3>Relaxe por 15min</h3>
-          <p>Não precisa meditar. Basta ouvir com fones enquanto toma café ou relaxa.</p>
-        </div>
+        <div><h3>Relaxe por 15min</h3><p>Não é meditação. Basta ouvir com fones enquanto relaxa ou toma seu café.</p></div>
       </div>
       <div class="how-step reveal">
         <div class="how-n">03</div>
-        <div>
-          <h3>Sinta a Mudança</h3>
-          <p>A clareza mental e a memória afiada tornam-se seu novo "normal" em poucos dias.</p>
-        </div>
+        <div><h3>Evolução Diária</h3><p>Sua mente se torna mais afiada a cada sessão. Os benefícios são cumulativos.</p></div>
       </div>
     </div>
   </div>
@@ -310,50 +330,78 @@ footer{padding:3rem 1.25rem;text-align:center;font-size:.8rem;color:var(--muted)
   <div class="sec-inner">
     <span class="sec-label">A Descoberta</span>
     <h2 class="reveal">O segredo roubado do cérebro de <em>Albert Einstein</em></h2>
-
     <div class="story-body reveal">
-      <p>Você já se perguntou por que algumas pessoas parecem ter uma mente que nunca falha?</p>
-      
       <div class="story-step active" id="step-1">
         <div class="highlight-box">
-          <p style="font-family:'Merriweather',serif; font-size:1.2rem; margin-bottom:1rem; color:#fff"><strong>O Caso Thomas Harvey</strong></p>
-          <p>Em 1955, o médico Thomas Harvey roubou o cérebro de Einstein durante a autópsia. Ele passou 40 anos escondendo o órgão em potes de cidra para descobrir uma única coisa...</p>
+          <p>Em 1955, o médico Thomas Harvey roubou o cérebro de Einstein durante a autópsia. Ele passou 40 anos escondendo o órgão para descobrir por que aquela mente era diferente...</p>
           <button class="btn-continue-reading" onclick="revealStep(2, this)">O que ele descobriu? ↓</button>
         </div>
       </div>
-
       <div class="story-step" id="step-2">
-        <p>Ele descobriu que a "ponte" entre os hemisférios de Einstein era 15% mais espessa que o normal. Einstein não nasceu assim. Ele treinou essa conexão tocando violino.</p>
-        <div class="highlight-box">
-            O ato de tocar levava seu cérebro à <strong>Frequência Theta</strong>. O NeuroShift replica esse exato estado neural sem que você precise tocar uma nota sequer.
-        </div>
-        <button class="btn-continue-reading" onclick="revealStep(3, this)">Como o NeuroShift faz isso? ↓</button>
+        <p>Ele descobriu que a "ponte" entre os hemisférios de Einstein era 15% mais espessa que o normal. Einstein treinou essa conexão tocando violino, entrando naturalmente em <strong>Frequência Theta</strong>.</p>
+        <button class="btn-continue-reading" onclick="revealStep(3, this)">O segredo tecnológico ↓</button>
       </div>
-
       <div class="story-step" id="step-3">
-        <p>Através de frequências binaurais e pulsos isocrônicos, nós "guiamos" suas ondas cerebrais para o estado Theta em minutos. É como um atalho tecnológico para a alta performance mental.</p>
+        <p>O NeuroShift replica esse exato estado neural através de frequências binaurais, guiando seu cérebro para a alta performance em minutos sem esforço.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- OFERTA -->
+<!-- DEPOIMENTOS (REPOSICIONADO AQUI) -->
+<section class="test-sec">
+    <div class="sec-inner-wide">
+        <span class="sec-label" style="text-align:center">Resultados Reais</span>
+        <h2 style="text-align:center">O que dizem os nossos membros</h2>
+        <div class="test-grid">
+            <div class="test-card reveal">
+                <div class="stars">★★★★★</div>
+                <p class="test-text">"Na terceira sessão já senti diferença. Consegui ler 40 páginas sem olhar o celular uma vez. Não fazia isso há anos."</p>
+                <div class="test-user">
+                    <div class="test-avatar">RC</div>
+                    <div class="test-info"><b>Ricardo C.</b><span>Empresário · São Paulo</span></div>
+                </div>
+            </div>
+            <div class="test-card reveal">
+                <div class="stars">★★★★★</div>
+                <p class="test-text">"Estava esquecendo o nome dos meus próprios clientes. Depois de algumas semanas com o protocolo, minha memória voltou como há dez anos atrás."</p>
+                <div class="test-user">
+                    <div class="test-avatar">MA</div>
+                    <div class="test-info"><b>Marcos A.</b><span>Advogado · Belo Horizonte</span></div>
+                </div>
+            </div>
+            <div class="test-card reveal">
+                <div class="stars">★★★★★</div>
+                <p class="test-text">"Passei anos achando que dispersão era meu feitio. Não era. Era meu cérebro pedindo socorro. O NeuroShift foi minha virada."</p>
+                <div class="test-user">
+                    <div class="test-avatar">FT</div>
+                    <div class="test-info"><b>Fernanda T.</b><span>Designer · Rio de Janeiro</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OFERTA PREMIUM -->
 <section class="offer-sec" id="oferta">
   <div class="sec-inner">
     <div class="offer-card reveal">
-      <span class="sec-label">Acesso Vitalício</span>
+      <span class="sec-label">Acesso Imediato</span>
       <h2 style="margin-bottom:0">NeuroShift Pro</h2>
       <div class="price-free">R$ 8,90</div>
-      <p style="color:var(--muted)">Pagamento único. Sem mensalidades.</p>
+      <span class="offer-note">Cancele quando quiser.</span>
       
-      <div style="text-align:left; margin-top:2rem">
-        <p style="margin-bottom:0.5rem">✅ Áudios Theta Diários</p>
-        <p style="margin-bottom:0.5rem">✅ Guia de Ativação Neural</p>
-        <p style="margin-bottom:0.5rem">✅ Bônus: Sono Profundo</p>
+      <div class="bonus-list">
+        <div class="bonus-item"><div class="check-icon">✓</div><span>Áudios Theta Diários Otimizados</span></div>
+        <div class="bonus-item"><div class="check-icon">✓</div><span>Protocolo Completo de Ativação</span></div>
+        <div class="bonus-item"><div class="check-icon">✓</div><span>E-book: O Código de Einstein</span></div>
+        <div class="bonus-item"><div class="check-icon">✓</div><span>E-book: Alimentação Neural</span></div>
+        <div class="bonus-item"><div class="check-icon">✓</div><span>Rastreador de Performance Mental</span></div>
+        <div class="bonus-item"><div class="check-icon">✓</div><span>Suporte Prioritário da Comunidade</span></div>
       </div>
 
-      <a href="https://pay.hotmart.com/J105513010I?off=4coph92i" class="btn-cta-offer">Garantir Meu Acesso Agora</a>
-      <p style="font-size:.7rem; color:var(--muted); margin-top:1rem">🛡️ Garantia incondicional de 7 dias</p>
+      <a href="https://pay.hotmart.com/J105513010I?off=4coph92i" class="btn-cta-offer">Começar Agora</a>
+      <p style="font-size:.7rem; color:var(--muted); margin-top:1rem">🛡️ Satisfação garantida ou seu dinheiro de volta</p>
     </div>
   </div>
 </section>
@@ -365,66 +413,64 @@ footer{padding:3rem 1.25rem;text-align:center;font-size:.8rem;color:var(--muted)
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-btn" onclick="toggleFaq(this)">Preciso de fones de ouvido? <span>+</span></button>
-        <div class="faq-body"><p>Sim. Para que a sincronização dos hemisférios funcione, é necessário o uso de fones (qualquer modelo serve).</p></div>
+        <div class="faq-body"><p>Sim. Para que a tecnologia de frequências binaurais funcione corretamente, é necessário o uso de fones para enviar sinais diferentes a cada hemisfério cerebral.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">Em quanto tempo sinto os resultados? <span>+</span></button>
-        <div class="faq-body"><p>Muitos usuários relatam maior clareza já na primeira sessão, mas os resultados permanentes em memória e foco surgem após 3 a 5 dias de uso.</p></div>
+        <button class="faq-btn" onclick="toggleFaq(this)">Como funcionam os benefícios? <span>+</span></button>
+        <div class="faq-body"><p>O NeuroShift funciona como uma academia para o seu cérebro. Nas primeiras sessões você sente clareza imediata, mas o fortalecimento das conexões neurais ocorre com a prática contínua, tornando sua mente cada vez mais resiliente e afiada ao longo do tempo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">Qualquer pessoa pode fazer? <span>+</span></button>
+        <div class="faq-body"><p>Sim, o protocolo foi desenhado para ser acessível a qualquer adulto que deseje melhorar o foco, a retenção de memória e a clareza para tomadas de decisão.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">Como faço para cancelar? <span>+</span></button>
+        <div class="faq-body"><p>O processo é simples e pode ser feito a qualquer momento diretamente na plataforma de pagamento ou enviando um e-mail ao nosso suporte, sem burocracias ou perguntas.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">Por quanto tempo terei acesso? <span>+</span></button>
+        <div class="faq-body"><p>Enquanto sua assinatura estiver ativa, você terá acesso ilimitado aos áudios diários, bônus exclusivos e todas as atualizações do protocolo NeuroShift.</p></div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 NeuroShift · Neurociência aplicada ao desempenho</p>
-  <div style="margin-top:1rem; opacity:0.5">
-    <a href="#" style="color:#fff; text-decoration:none; margin:0 10px">Termos</a>
-    <a href="#" style="color:#fff; text-decoration:none; margin:0 10px">Privacidade</a>
-  </div>
+  <p>© 2025 NeuroShift · Excelência em Performance Cerebral</p>
 </footer>
 
 <script>
-// LÓGICA DO BOTÃO FLUTUANTE (STICKY CTA)
+// LÓGICA STICKY CTA
 const stickyCta = document.getElementById('stickyCta');
 const hero = document.getElementById('hero');
 const oferta = document.getElementById('oferta');
 
 const observerOptions = { threshold: 0.1 };
 
-// Revelar botão após passar a hero
 const heroObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            stickyCta.classList.add('visible');
-        } else {
-            stickyCta.classList.remove('visible');
-        }
+        if (!entry.isIntersecting) stickyCta.classList.add('visible');
+        else stickyCta.classList.remove('visible');
     });
 }, observerOptions);
 
-// Esconder botão ao chegar na oferta (para não conflitar)
 const offerObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            stickyCta.classList.add('hidden-offer');
-        } else {
-            stickyCta.classList.remove('hidden-offer');
-        }
+        if (entry.isIntersecting) stickyCta.classList.add('hidden-offer');
+        else stickyCta.classList.remove('hidden-offer');
     });
 }, observerOptions);
 
 heroObserver.observe(hero);
 offerObserver.observe(oferta);
 
-// STORY PROGRESSION
+// STORY
 function revealStep(n, btn) {
     btn.style.display = 'none';
     const next = document.getElementById('step-' + n);
     if (next) {
         next.classList.add('active');
-        setTimeout(() => {
-            next.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 100);
+        setTimeout(() => next.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
     }
 }
 
@@ -436,7 +482,7 @@ function toggleFaq(btn) {
     span.textContent = item.classList.contains('open') ? '−' : '+';
 }
 
-// REVEAL ANIMATION
+// REVEAL ANIMATIONS
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('active');
